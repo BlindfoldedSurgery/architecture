@@ -2,7 +2,7 @@ namespace: blindfoldedsurgery
 
 deployment:
   name: architecture
-  image: ghcr.io/BlindfoldedSurgery/architecture:__TAG__
+  image: ghcr.io/blindfoldedsurgery/architecture:__TAG__
   imagePullPolicy: IfNotPresent
   revisionHistoryLimit: 1
   replicas: 1

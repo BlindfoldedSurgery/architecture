@@ -1,0 +1,30 @@
+site_name: Blindfolded Surgery
+site_url: https://docs.blindfolded.surgery
+site_description: "a blog, indeed"
+repo_url: https://github.com/BlindfoldedSurgery/architecture
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+plugins:
+  # - git-revision-date
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+      cache_safe: true
+  - rss
+nav:
+  - Home: index.md
+  - About: about.md

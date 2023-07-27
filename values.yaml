@@ -1,0 +1,35 @@
+namespace: blindfoldedsurgery
+
+deployment:
+  name: architecture
+  image: ghcr.io/BlindfoldedSurgery/architecture:__TAG__
+  imagePullPolicy: IfNotPresent
+  revisionHistoryLimit: 1
+  replicas: 1
+  ports:
+  - 8080
+  labels:
+    app: architecture
+  requests:
+    cpu: 100m
+    memory: 100Mi
+  limit:
+    cpu: 300m
+    memory: 300Mi
+
+configmap:
+  nginx:
+    name: architecture
+
+service:
+  name: architecture
+  port: 80
+  targetPort: 8080
+  appSelector: architecture
+
+ingress:
+  hosts:
+    - docs.blindfolded.surgery
+  secret: tls-architecture
+  issuer: letsencrypt-issuer
+  name: architecture

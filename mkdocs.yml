@@ -16,7 +16,7 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 plugins:
-  # - git-revision-date
+  - git-revision-date
   - minify:
       minify_html: true
       minify_js: true

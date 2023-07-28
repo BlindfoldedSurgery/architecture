@@ -44,6 +44,8 @@ markdown_extensions:
   - def_list
   - footnotes
   - tables
+  - toc:
+      permalink: true
 
   # Python Markdown Extensions (https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/)
   - pymdownx.betterem

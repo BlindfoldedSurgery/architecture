@@ -23,6 +23,7 @@ theme:
     - navigation.top
 
 plugins:
+  - awesome-pages
   - git-revision-date:
       enabled_if_env: ENABLE_GIT_PLUGIN
   - search:
@@ -35,10 +36,6 @@ plugins:
           remove_comments: true
       cache_safe: true
   - rss
-  - awesome-pages
-nav:
-  - Home: index.md
-  - About: about.md
 
 markdown_extensions:
   # Python Markdown (https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/)

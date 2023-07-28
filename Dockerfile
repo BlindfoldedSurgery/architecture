@@ -1,15 +1,23 @@
-FROM python:3.11 as builder
+FROM python:3.11 AS base
 
 WORKDIR /app
 
 ENV PYTHONUNBUFFERED 1
 
-ADD .git/ .git/
-ADD docs/ docs/
-ADD requirements.txt requirements.txt
-ADD mkdocs.yml mkdocs.yml
+COPY requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
+
+COPY mkdocs.yml mkdocs.yml
+
+ENTRYPOINT [ "mkdocs" ]
+
+FROM base AS builder
+
+ENV ENABLE_GIT_PLUGIN=1
+COPY .git/ .git/
+COPY docs/ docs/
+
 RUN mkdocs build
 
 FROM nginxinc/nginx-unprivileged:1.25.1

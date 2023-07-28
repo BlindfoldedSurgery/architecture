@@ -35,6 +35,7 @@ plugins:
           remove_comments: true
       cache_safe: true
   - rss
+  - awesome-pages
 nav:
   - Home: index.md
   - About: about.md

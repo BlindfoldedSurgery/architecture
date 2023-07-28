@@ -1,3 +1,3 @@
 # About
 
-[github](https://github.com/BlindfoldedSurgery)
+[GitHub](https://github.com/BlindfoldedSurgery)

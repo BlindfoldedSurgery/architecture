@@ -15,7 +15,7 @@ jobs:
         run: |
           sed -i -e "s#__IMAGE_NAME__#dummy-image#g" values.yaml
           sed -i -e "s#__TAG__#v0#g" values.yaml
-      - uses: BlindfoldedSurgery/github-action-helm@v0.2.0
+      - uses: BlindfoldedSurgery/github-action-helm@v0.3.0
         with:
           raw_command: lint --strict
 
@@ -73,7 +73,7 @@ jobs:
           sed -i -e "s#__IMAGE_NAME__#${IMAGE_NAME}#g" values.yaml
           sed -i -e "s#__TAG__#${GITHUB_SHA}#g" values.yaml
       - name: install helm chart
-        uses: BlindfoldedSurgery/github-action-helm@v0.2.0
+        uses: BlindfoldedSurgery/github-action-helm@v0.3.0
         with:
           subcommand: upgrade
           ref: .

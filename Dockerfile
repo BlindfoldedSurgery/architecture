@@ -20,6 +20,6 @@ COPY docs/ docs/
 
 RUN mkdocs build
 
-FROM nginxinc/nginx-unprivileged:1.25.1
+FROM nginxinc/nginx-unprivileged:1.25.2
 
 COPY --from=builder /app/site /usr/share/nginx/html

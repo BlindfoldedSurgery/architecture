@@ -6,6 +6,10 @@ on:
   pull_request: { }
 
 jobs:
+  validate-renovate-config:
+    name: Validate Renovate configuration
+    uses: BlindfoldedSurgery/renovate-config/.github/workflows/validate.yml@main
+
   lint:
     name: "helm lint"
     runs-on: ubuntu-latest
